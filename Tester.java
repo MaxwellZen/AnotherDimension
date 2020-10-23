@@ -19,5 +19,14 @@ public class Tester {
     System.out.println(Arrays.toString(ArrayOps.largestInRows(arr4)));
     System.out.println(ArrayOps.sum(arr4));
     System.out.println( Arrays.toString(ArrayOps.sumCols(arr4)));
+    int[][] arr5 = { {  1,  2, 3, 4 },
+    {  2, 3,  4,  1 },
+    { 3, 4,  1, 2 } };
+    System.out.println(ArrayOps.isRowMagic(arr5));
+    int[][] arr6 = { {  1,  1, 1 },
+    {  2, 2, 2 },
+    { 3,  3, 3 } };
+    System.out.println(ArrayOps.isRowMagic(arr6));
+
   }
 }
