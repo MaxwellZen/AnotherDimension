@@ -9,5 +9,6 @@ public class Tester {
     System.out.println(String.valueOf(ArrayOps.largest(arr2)));
     int[][] arr3 = {{1},{100,10,1},{1,9,2,8,3,7,4,6,5,5}};
     System.out.println(Arrays.toString(ArrayOps.sumRows(arr3)));
+    System.out.println(Arrays.toString(ArrayOps.largestInRows(arr3)));
   }
 }
