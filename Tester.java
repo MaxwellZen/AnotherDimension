@@ -23,10 +23,12 @@ public class Tester {
     {  2, 3,  4,  1 },
     { 3, 4,  1, 2 } };
     System.out.println(ArrayOps.isRowMagic(arr5));
+    System.out.println(ArrayOps.isColMagic(arr5));
     int[][] arr6 = { {  1,  1, 1 },
     {  2, 2, 2 },
     { 3,  3, 3 } };
     System.out.println(ArrayOps.isRowMagic(arr6));
+    System.out.println(ArrayOps.isColMagic(arr6));
 
   }
 }
