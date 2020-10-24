@@ -1,4 +1,5 @@
 public class ArrayOps {
+
   public static int sum(int[] arr) {
     int sum = 0;
     for (int i = 0; i < arr.length; i++) {
@@ -6,6 +7,7 @@ public class ArrayOps {
     }
     return sum;
   }
+
   public static int largest(int[] arr) {
     int max = arr[0];
     for (int i = 0; i < arr.length; i++) {
@@ -15,6 +17,7 @@ public class ArrayOps {
     }
     return max;
   }
+
   public static int[] sumRows (int[][] matrix) {
     int[] ans = new int[matrix.length];
     for (int i = 0; i < matrix.length; i++) {
@@ -22,6 +25,7 @@ public class ArrayOps {
     }
     return ans;
   }
+
   public static  int[] largestInRows(int[][] matrix) {
     int[] ans = new int[matrix.length];
     for (int i = 0; i < matrix.length; i++) {
@@ -29,22 +33,23 @@ public class ArrayOps {
     }
     return ans;
   }
+
   public static int sum(int[][] arr) {
     return sum(sumRows(arr));
   }
+
   public static int[] sumCols(int[][] matrix) {
     if (matrix.length == 0) {
       int[] ans = {};
       return ans;
     }
-    int[][] mat = new int[matrix[0].length][matrix.length];
-    for (int i = 0; i < matrix.length; i++) {
-      for (int j = 0; j < mat.length; j++) {
-        mat[j][i] = matrix[i][j];
-      }
+    int[] ans = new int[matrix[0].length];
+    for (int i = 0; i < ans.length; i++) {
+      ans[i] = colSum(matrix, i);
     }
-    return sumRows(mat);
+    return ans;
   }
+
   public static boolean isRowMagic(int[][] matrix) {
     for (int i = 0; i < matrix.length - 1; i++) {
       if (sum(matrix[i]) != sum(matrix[i+1])) {
@@ -53,6 +58,7 @@ public class ArrayOps {
     }
     return true;
   }
+
   public static int colSum(int[][] matrix, int col) {
     int sum = 0;
     for (int i = 0; i < matrix.length; i++) {
@@ -60,6 +66,7 @@ public class ArrayOps {
     }
     return sum;
   }
+
   public static boolean isColMagic(int[][] matrix) {
     if (matrix.length == 0) return true;
     for (int i = 0; i < matrix[0].length - 1; i++) {
@@ -69,7 +76,9 @@ public class ArrayOps {
     }
     return true;
   }
+
   public static boolean isLocationMagic(int[][] matrix, int row, int col) {
     return sum(matrix[row]) == colSum(matrix, col);
   }
+  
 }
